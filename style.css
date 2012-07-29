@@ -1,0 +1,77 @@
+/*
+Theme Name: Troop262
+Theme URI: http://troop262ps.org/
+Github Theme URI: https://github.com/afragen/troop262
+Description: Child-Theme of Desk Mess Mirrored <strong>2.0</strong> - Marble desktop covered with Boy Scout Merit Badges, district and local patches, and troop number.
+Version: 1.1
+Template: desk-mess-mirrored
+Template Version: 2.0
+Author: Andy Fragen
+Author URI: http://thefragens.com/blog
+WordPress Version Required: 3.1.0
+Tested Up To: 3.3
+Tags: brown, orange, silver, tan, light, two-columns, right-sidebar, fixed-width, threaded-comments, sticky-post, custom-menu, custom-background
+License: GNU General Public License v2
+License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+*/
+
+@import url("../desk-mess-mirrored/style.css");
+
+/*=- Specials -=*/
+div.textwidget form input { border: none; } /* Specifically added for PayPal Donate button */
+#cup {background: none;}
+/*-= End Specials =-*/
+
+ul.children li.comment { list-style: none outside none; }
+
+#cup, #logo, #headerleft {display:none;}
+#header {background:url(images/262-logo.png) no-repeat center;}
+#top-navigation-menu { padding-top: 300px; }
+
+.page p, #main-blog p { padding: 0.5em 0; }
+.page ol, .page ul { list-style-position:outside; }
+
+.rss {background: url(images/rssicon.png) no-repeat 0 50%;}
+
+#main-blog p img {
+  display: block;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #a9a9a9;
+  margin: -6px 6px 6px -6px;
+  padding: 4px;
+  margin: 0 1em;
+  -webkit-box-shadow: 3px 3px 3px #666;
+  -moz-box-shadow: 3px 3px 3px #666;
+}
+
+#main-blog p img.wp-smiley {
+  display: inline;
+  position: auto;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+
+blockquote p {
+  font-size: 1.2em;
+}
+
+.post ul {
+  list-style-type: circle;
+}
+
+/*
+.gce-page-list ul {
+  line-height: 1em;
+  white-space: normal;
+}
+*/
+
+#ciec_disclaimer { font-size:0.7em; }
+
+/* Clean Contact */
+.CleanContact input[type="text"] { line-height: 2em; }
