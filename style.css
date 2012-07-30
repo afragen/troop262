@@ -3,7 +3,7 @@ Theme Name: Troop262
 Theme URI: http://troop262ps.org/
 Github Theme URI: https://github.com/afragen/troop262
 Description: Child-Theme of Desk Mess Mirrored <strong>2.0</strong> - Marble desktop covered with Boy Scout Merit Badges, district and local patches, and troop number.
-Version: 1.1
+Version: 1.2
 Template: desk-mess-mirrored
 Template Version: 2.0
 Author: Andy Fragen
@@ -63,6 +63,8 @@ blockquote p {
 .post ul {
   list-style-type: circle;
 }
+
+form.contact-form input { height: 2.5em; }
 
 /*
 .gce-page-list ul {
