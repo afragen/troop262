@@ -24,6 +24,7 @@ if ( !defined('ABSPATH') ) { die('-1'); }
             <div class="clear">&nbsp;</div>
 
 <h2 class="tribe-events-cal-title"><?php tribe_events_title(); ?></h2>
+<?php teccc_legend_hook(); ?>
 <?php include(tribe_get_current_template()); ?>
 <?php tribe_events_after_html() ?>
 
