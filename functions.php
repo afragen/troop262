@@ -57,5 +57,25 @@ function tribe_ical_outlook_modify( $content ) {
 	return $content;
 }
 
+add_action( 'register_form', 't262_username') );
+add_action( 'register_form', 't262_add_warning') );
+add_action( 'user_register', 't262_register_extra_fields', 10) );
 
-?>
+public function t262_username() {
+	$html = '<label>First Name<br />
+		<input type="text" name="first_name" id="first_name" class="input" value="" size="25" tabindex="20" /></label>
+		<label>Last Name<br />
+		<input type="text" name="last_name" id="last_name" class="input" value="" size="25" tabindex="20" /></label>
+		<label for="drmc_department" id="drmc_department">Department</label><br />';
+	echo $html;
+}
+
+function t262_add_warning() {
+	echo '<br /><br /><p class="message">You must fill out <strong>ALL</strong> fields or your registration will be denied.</p><br />';
+}
+
+function t262_register_extra_fields ( $user_id ) {
+	global $wpdb;
+	update_user_meta( $user_id, 'first_name', $_POST['first_name'] );
+	update_user_meta( $user_id, 'last_name', $_POST['last_name'] );
+	}
