@@ -61,12 +61,15 @@ add_action( 'register_form', 't262_username') );
 add_action( 'register_form', 't262_add_warning') );
 add_action( 'user_register', 't262_register_extra_fields', 10) );
 
-public function t262_username() {
+add_action( 'register_form', 't262_username' );
+add_action( 'register_form', 't262_add_warning' );
+add_action( 'user_register', 't262_register_extra_fields', 10 );
+
+function t262_username() {
 	$html = '<label>First Name<br />
 		<input type="text" name="first_name" id="first_name" class="input" value="" size="25" tabindex="20" /></label>
 		<label>Last Name<br />
-		<input type="text" name="last_name" id="last_name" class="input" value="" size="25" tabindex="20" /></label>
-		<label for="drmc_department" id="drmc_department">Department</label><br />';
+		<input type="text" name="last_name" id="last_name" class="input" value="" size="25" tabindex="20" /></label>';
 	echo $html;
 }
 
