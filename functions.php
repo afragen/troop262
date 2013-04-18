@@ -57,9 +57,6 @@ function tribe_ical_outlook_modify( $content ) {
 	return $content;
 }
 
-add_action( 'register_form', 't262_username') );
-add_action( 'register_form', 't262_add_warning') );
-add_action( 'user_register', 't262_register_extra_fields', 10) );
 
 add_action( 'register_form', 't262_username' );
 add_action( 'register_form', 't262_add_warning' );
