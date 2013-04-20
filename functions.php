@@ -57,10 +57,16 @@ function tribe_ical_outlook_modify( $content ) {
 	return $content;
 }
 
-
 add_action( 'register_form', 't262_username' );
 add_action( 'register_form', 't262_add_warning' );
 add_action( 'user_register', 't262_register_extra_fields', 10 );
+
+add_action( 'new_user_approve_user_denied', 't262_delete_user' );
+function t262_delete_user ( $user ) {
+	global $wpdb;
+	require_once( ABSPATH . '/wp-admin/includes/user.php');
+	wp_delete_user( $user->ID );
+}
 
 function t262_username() {
 	$html = '<label>First Name<br />
