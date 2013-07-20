@@ -45,28 +45,10 @@ function ciec_disclaimer() {
 }
 
 
-//add_filter( 'tribe_ical_properties', 'tribe_ical_outlook_modify', 10, 2 );
-function tribe_ical_outlook_modify( $content ) {
-	$properties = preg_split ( '/$\R?^/m', $content );
-	$searchValue = "X-WR-CALNAME";
-	$fl_array = preg_grep('/^' . "$searchValue" . '.*/', $properties);
-	$key = array_values($fl_array);
-	$keynum = key($fl_array);
-	unset($properties[$keynum]);
-	$content = implode( "\n", $properties );
-	return $content;
-}
-
 add_action( 'register_form', 't262_username' );
 add_action( 'register_form', 't262_add_warning' );
-add_action( 'user_register', 't262_register_extra_fields', 10 );
-
-add_action( 'new_user_approve_user_denied', 't262_delete_user' );
-function t262_delete_user ( $user ) {
-	global $wpdb;
-	require_once( ABSPATH . '/wp-admin/includes/user.php');
-	wp_delete_user( $user->ID );
-}
+add_action( 'register_post', 't262_registration_errors', 10, 3 );
+add_action( 'user_register', 't262_register_extra_fields' );
 
 function t262_username() {
 	$html = '<label>First Name<br />
@@ -81,7 +63,25 @@ function t262_add_warning() {
 }
 
 function t262_register_extra_fields ( $user_id ) {
-	global $wpdb;
-	update_user_meta( $user_id, 'first_name', $_POST['first_name'] );
-	update_user_meta( $user_id, 'last_name', $_POST['last_name'] );
+	update_user_meta( $user_id, 'first_name', t262_ucname( $_POST['first_name'] ) );
+	update_user_meta( $user_id, 'last_name', t262_ucname( $_POST['last_name'] ) );
+}
+
+function t262_registration_errors( $sanitized_user_login, $user_email, $errors  ) {
+	if( preg_match( '/[^-\.\w]/', $sanitized_user_login) )
+		$errors->add( 'user_name', '<strong>ERROR</strong>: Your username contains one or more invalid characters.' );
+	if( empty( $_POST['first_name'] ) )
+        $errors->add( 'first_name_error', '<strong>ERROR</strong>: You must include a first name.' );
+	if( empty( $_POST['last_name'] ) )
+		$errors->add( 'last_name_error', '<strong>ERROR</strong>: You must include a last name.' );
+	return $errors;
+}
+
+function t262_ucname( $string ) {
+	$string =ucwords( strtolower( $string ) );
+	foreach( array( '-', '\'' ) as $delimiter) {
+		if( strpos( $string, $delimiter ) !== false )
+			$string = implode( $delimiter, array_map( 'ucfirst', explode( $delimiter, $string ) ) );
 	}
+	return $string;
+}
