@@ -85,3 +85,21 @@ function t262_ucname( $string ) {
 	}
 	return $string;
 }
+
+add_action( 'init', 't262_create_post_type' );
+function t262_create_post_type() {
+	register_post_type( 't262_articles',
+		array(
+			'labels'        => array(  
+			'name'          => __( 'Articles' ),  
+			'singular_name' => __( 'Article' ),
+			),
+		'public' => true,
+		'menu_position' => 5,
+		'rewrite' => array('slug' => 'articles'),
+		'taxonomies' => array( '' ),
+		'supports' => array('title', 'editor', 'comments', 'post-formats'),
+		'has_archive' => true,
+		)
+	);
+}
