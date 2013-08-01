@@ -103,3 +103,11 @@ function t262_create_post_type() {
 		)
 	);
 }
+
+add_action( 'tribe_events_after_the_title', 'my_category_description' );
+function my_category_description() {
+	global $wp_query;
+	if( !isset( $wp_query->query_vars['post_type'] ) or !isset( $wp_query->query_vars['eventDisplay'] ) or !isset( $wp_query->queried_object ) ) return;
+	if( $wp_query->query_vars['post_type'] === 'tribe_events' and $wp_query->query_vars['eventDisplay'] === 'upcoming' )
+		echo '<div style="text-align:center">' . $wp_query->queried_object->description . '</div>';
+}
