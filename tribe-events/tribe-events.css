@@ -20,6 +20,7 @@ li.tribe-events-adv-list-widget ol li {
 table.tribe-events-calendar { background-color: #fff; }
 
 /* iPhone [portrait + landscape] */
+/*
 @media only screen and (max-device-width: 480px) {
 	body { min-width: 550px; }
 	.tribe-events-thismonth, .tribe-events-othermonth { min-width: 50px; max-width:60px;}
@@ -27,4 +28,4 @@ table.tribe-events-calendar { background-color: #fff; }
 	.tribe-events-calendar-buttons { top:0; left:0; }
 
 }
-
+*/
