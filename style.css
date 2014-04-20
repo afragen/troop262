@@ -1,18 +1,19 @@
 /*
-Theme Name: Troop262
-Theme URI: http://troop262ps.org/
-Github Theme URI: https://github.com/afragen/troop262
-Description: Child-Theme of Desk Mess Mirrored <strong>2.0</strong> - Marble desktop covered with Boy Scout Merit Badges, district and local patches, and troop number.
-Version: 1.4.1
-Template: desk-mess-mirrored
+Theme Name:       Troop262
+Theme URI:        http://troop262ps.org/
+Description:      Child-Theme of Desk Mess Mirrored <strong>2.0</strong> - Marble desktop covered with Boy Scout Merit Badges, district and local patches, and troop number.
+Version:          1.4.1
+Template:         desk-mess-mirrored
 Template Version: 2.2
-Author: Andy Fragen
-Author URI: http://thefragens.com/blog
-WordPress Version Required: 3.1.0
-Tested Up To: 3.3
-Tags: brown, orange, silver, tan, light, two-columns, right-sidebar, fixed-width, threaded-comments, sticky-post, custom-menu, custom-background
-License: GNU General Public License v2
-License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+Author:           Andy Fragen
+Author URI:       http://thefragens.com/blog
+Required:         3.1.0
+Tested Up To:     3.9
+Tags:             brown, orange, silver, tan, light, two-columns, right-sidebar, fixed-width, threaded-comments, sticky-post, custom-menu, custom-background
+License:          GNU General Public License v2
+License URI:      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+GitHub Theme URI: https://github.com/afragen/troop262
+GitHub Branch:    develop
 */
 
 @import url("../desk-mess-mirrored/style.css");
