@@ -1,18 +1,24 @@
 <?php
 
-function dmm_nav_menu() { 
+add_action( 'wp_enqueue_scripts', 'enqueue_child_theme_styles', 99 );
+function enqueue_child_theme_styles() {
+	wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
+	wp_enqueue_style( 'child-style', get_stylesheet_uri(), array('parent-style')  );
+}
+
+function dmm_nav_menu() {
   if ( function_exists( 'wp_nav_menu' ) )
     if ( is_home() || is_front_page() ) {
-      wp_nav_menu( array( 
-        'menu_class' => 'nav-menu', 
-        'theme_location' => 'top-menu', 
+      wp_nav_menu( array(
+        'menu_class' => 'nav-menu',
+        'theme_location' => 'top-menu',
         'fallback_cb' => 'dmm_list_pages'
          ) );
     } else {
-      wp_nav_menu( array( 
-        'menu_class' => 'nav-menu', 
-        'theme_location' => 'secondary-menu', 
-        'fallback_cb' => 'dmm_list_pages' 
+      wp_nav_menu( array(
+        'menu_class' => 'nav-menu',
+        'theme_location' => 'secondary-menu',
+        'fallback_cb' => 'dmm_list_pages'
         ) );
     }
   else
@@ -90,8 +96,8 @@ add_action( 'init', 't262_create_post_type' );
 function t262_create_post_type() {
 	register_post_type( 't262_articles',
 		array(
-			'labels'        => array(  
-			'name'          => __( 'Articles' ),  
+			'labels'        => array(
+			'name'          => __( 'Articles' ),
 			'singular_name' => __( 'Article' ),
 			),
 		'public' => true,
