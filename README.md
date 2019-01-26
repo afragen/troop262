@@ -1,4 +1,4 @@
 README
 ======
 
-This is a child theme based upon Desk Mess Mirrored by Edward Cassie. It is for the BSA Troop 262 website.
+This is a child theme based upon Scout Troop by Handsomeweb.com. It is for the BSA Troop 262 website.

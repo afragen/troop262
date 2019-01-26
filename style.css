@@ -1,38 +1,42 @@
 /*
 Theme Name:       Troop262
 Theme URI:        http://troop262ps.org/
-Description:      Child-Theme of Desk Mess Mirrored <strong>2.0</strong> - Marble desktop covered with Boy Scout Merit Badges, district and local patches, and troop number.
-Version:          1.4.1.1
-Template:         desk-mess-mirrored
-Template Version: 2.2
+Description:      Desktop covered with Boy Scout Merit Badges, district and local patches, and troop number.
+Version:          2.0.0
+Template:         scouttroop
+Template Version: 1.26
 Author:           Andy Fragen
 Author URI:       http://thefragens.com/blog
-Required:         3.1.0
-Tested Up To:     4.4.1
-Tags:             brown, orange, silver, tan, light, two-columns, right-sidebar, fixed-width, threaded-comments, sticky-post, custom-menu, custom-background
+Required:         4.6.0
+Tested Up To:     5.1
 License:          GNU General Public License v2
 License URI:      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 GitHub Theme URI: https://github.com/afragen/troop262
-GitHub Branch:    develop
 */
 
 /*=- Specials -=*/
 div.textwidget form input { border: none; } /* Specifically added for PayPal Donate button */
-#cup {background: none;}
+/* #cup {background: none;} */
 /*-= End Specials =-*/
 
 ul.children li.comment { list-style: none outside none; }
 
-#cup, #logo, #headerleft {display:none;}
-#header {background:url(images/262-logo.png) no-repeat center;}
+/* #cup, #logo, #headerleft {display:none;} */
+#wrapper {
+  background:url(images/262-logo.png) no-repeat top;
+  padding-top: 300px;
+}
+#tribe-events-pg-template #wrapper { background:none;
+  padding-top: 0;
+}
 #top-navigation-menu { padding-top: 300px; }
 
-.page p, #main-blog p { padding: 0.5em 0; }
+.page p, #wrapper p { padding: 0.5em 0; }
 .page ol, .page ul { list-style-position:outside; }
 
-.rss {background: url(images/rssicon.png) no-repeat 0 50%;}
+.rss { background: url(images/rssicon.png) no-repeat 0 50%; }
 
-#main-blog p img {
+#wrapper p img {
   display: block;
   position: relative;
   background-color: #fff;
@@ -44,7 +48,7 @@ ul.children li.comment { list-style: none outside none; }
   -moz-box-shadow: 3px 3px 3px #666;
 }
 
-#main-blog p img.wp-smiley {
+#wrapper p img.wp-smiley {
   display: inline;
   position: auto;
   background-color: transparent;
@@ -65,7 +69,10 @@ blockquote p {
 
 form.contact-form input { height: 2.5em; }
 
-#ciec_disclaimer { font-size:0.7em; }
+#ciec_disclaimer {
+  font-size:0.7em;
+  text-align: center;
+}
 
 /* Clean Contact */
 .CleanContact input[type="text"] { line-height: 2em; }
