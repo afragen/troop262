@@ -2,13 +2,13 @@
 Theme Name:       Troop262
 Theme URI:        http://troop262ps.org/
 Description:      Desktop covered with Boy Scout Merit Badges, district and local patches, and troop number.
-Version:          2.0.0
+Version:          2.1.0
 Template:         scouttroop
 Template Version: 1.26
 Author:           Andy Fragen
 Author URI:       http://thefragens.com/blog
 Required:         4.6.0
-Tested Up To:     5.1
+Tested Up To:     5.2
 License:          GNU General Public License v2
 License URI:      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 GitHub Theme URI: https://github.com/afragen/troop262
@@ -76,3 +76,30 @@ form.contact-form input { height: 2.5em; }
 
 /* Clean Contact */
 .CleanContact input[type="text"] { line-height: 2em; }
+
+/* new branding */
+#new-branding {
+  font-family: marcellusregular, Marcellus, "Trajan Pro", serif;
+  font-size: 35px;
+  line-height: 1.5em;
+  margin-top:3px;
+  white-space: nowrap;
+  padding-left:3px;
+  margin-bottom: 10px;
+  display: block;
+  text-transform: uppercase;
+  color: #005A9C;
+}
+
+/* smaller than ipad in portrait */
+@media only screen and (max-width : 767px)  {
+  #new-branding{
+	display: none;
+  }
+  #site-name{
+	line-height: 3em;
+	margin-bottom: 0;
+	display: block;
+	color: #005A9C;
+	}
+}

@@ -16,7 +16,7 @@ add_action( 'wp_head', 'ciec_disclaimer' );
 function ciec_disclaimer() {
 	$content = '';
 	if ( is_home() ) {
-		$content = '<div id="ciec_disclaimer">This website is not maintained by and does not represent the California Inland Empire Council or the Boy Scouts of America.</div>';
+		$content = '<div id="ciec_disclaimer">This website is not maintained by and does not represent the California Inland Empire Council or the Scouts BSA.</div>';
 	}
 	echo $content;
 }
